@@ -1,0 +1,26 @@
+<div *ngIf="!loading">
+  <div *ngIf="status == 'ok'; else error">
+    
+    <table border="1">
+      <thead>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Pais</th>
+        <th>Editar</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of usuarios">
+          <td>{{ u.id }}</td>
+          <td>{{ u.nombre+' '+u.apellido }}</td>
+          <td>{{ u.fechaNacimiento | date:'dd/LL/yyyy'  }}</td>
+          <td>{{ u.pais }}</td>
+          <td><a href="#" [routerLink]="['/editar-usuario/',u.id]">Editar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #error>
+    <h3>Error {{ result.error_id+' - '+result.error_msg }}</h3>
+  </ng-template>
+</div>

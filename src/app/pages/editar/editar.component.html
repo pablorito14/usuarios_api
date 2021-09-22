@@ -1,0 +1,38 @@
+<h3>{{ titulo }}</h3>
+<div *ngIf="!noResult; else sinResultados">
+  <form [formGroup]="crearUsuario" (ngSubmit)="agregarEditarUsuario()">
+    <div>
+      <label for="">Nombre</label>
+      <input type="text" formControlName="nombre" >
+    </div>
+    <div>
+      <label for="">Apellido</label>
+      <input type="text" formControlName="apellido" >  
+    </div>
+    <div>
+      <label for="">Fecha Nacimiento</label>
+      <!-- <input type="text" formControlName="fechaNacimiento" >   -->
+      <input type="date" formControlName="fechaNacimiento">
+    </div>
+    <div>
+      <label for="">Pais</label>
+      <select formControlName="pais">
+        <option value="argentina">Argentina</option>
+        <option value="chile">Chile</option>
+        <option value="brasil">Brasil</option>
+        <option value="uruguay">Uruguay</option>
+      </select>
+    </div>
+    <div>
+      
+      <input type="submit" value="guardar" >  
+    </div>
+
+    {{ crearUsuario.invalid | json }}
+  </form>
+</div>
+<ng-template #sinResultados>
+  <h3>No se encontraron resultados</h3>
+</ng-template>
+<a [routerLink]="['']">Volver</a>
+
