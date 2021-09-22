@@ -1,6 +1,6 @@
 <div *ngIf="!loading">
   <div *ngIf="status == 'ok'; else error">
-    
+    <button routerLink="agregar-usuario">Nuevo Usuario</button>
     <table border="1">
       <thead>
         <th>ID</th>
@@ -20,6 +20,7 @@
       </tbody>
     </table>
   </div>
+
   <ng-template #error>
     <h3>Error {{ result.error_id+' - '+result.error_msg }}</h3>
   </ng-template>
