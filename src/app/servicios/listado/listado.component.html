@@ -1,0 +1,44 @@
+<!-- <h3>Categorias</h3>
+<p *ngFor="let c of categorias">{{ c.pais }}</p> -->
+
+<h3>Servicios</h3>
+<!-- <div *ngFor="let c of categorias">
+  <p><b>{{ c.pais }}</b></p>
+  <div *ngFor="let s of servicios">
+    <p *ngIf="c.id_pais == s.id_pais">{{ s.str_descripcion }}</p>
+  </div>
+</div> -->
+
+<table *ngFor="let c of categorias">
+  <thead>
+    <th>ID</th>
+    <th>Descripcion</th>
+    <th>Pago</th>
+    <th>Precios</th>
+    <th>Costo</th>
+    <th>Demora</th>
+    <th>Estado</th>
+    <th>Accion</th>
+  </thead>
+  <tbody *ngFor="let s of servicios" >
+    <tr *ngIf="s.id_pais == c.id_pais && (s.id_estado_serv == 1 || s.id_estado_serv == 3)">
+      <td>{{ s.id_servicio }}</td>
+      <td>{{ s.str_descripcion }}</td>
+      <td>{{ s.pago }}</td>
+      <td>
+        {{ s.precio | currency:'ARS':'symbol':'1.0-0' }} / 
+        {{ s.precio_regular | currency:'ARS':'symbol':'1.0-0' }} / 
+        {{ s.precio_vip | currency:'ARS':'symbol':'1.0-0' }}
+      </td>
+      <td>{{ s.costo | currency }}</td>
+      <td>{{ s.str_demora }}</td>
+      <td>{{ s.id_estado_serv }}</td>
+      <td><a [routerLink]="['/servicio/editar/',s.id_servicio]">Editar</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+

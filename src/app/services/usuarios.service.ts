@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class UsuariosService {
   api_key:string='eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4ifQ.uBLksgABTWd-XGn-TkauyPZcNAfE9SS-L5ZZCOePyIc';
   url:string=`http://istoreliberaciones.com/api/usuarios`;
+  
   constructor(private http:HttpClient ) { }
 
 

@@ -26,6 +26,7 @@ export class ListadoComponent implements OnInit {
     this.loading = true;
     this._svc.mostrarDatos().subscribe(
       (data:any) => {
+        // console.log(data);
         this.status = data.status;
         this.result = data.result;
         if(data.status == 'ok'){

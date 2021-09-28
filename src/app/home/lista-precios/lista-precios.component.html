@@ -1,0 +1,46 @@
+<div class="masthead background-servicios">
+  <div class="container d-flex h-100 align-items-center container-index px-1 px-md-2">
+    <div class="mx-auto w-100">
+      <div class="card shadow mb-2">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-md-8">
+              <select name="" id="select_pais" class="form-control mb-2" #pais (change)="filtrarPaises(pais.value)">
+                <option value="-1">Mostrar todo</option>
+                <option *ngFor="let c of categorias" value="{{ c.id_pais }}">{{ c.pais }}</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control mb-2" #buscar (input)="busqueda(buscar.value)" placeholder="Buscar...">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tabla-servicios-{{ c.id_pais }}" *ngFor="let c of categorias | pais:filtro_pais">
+        <div class="card mb-2 d-none d-md-flex categorias" id="{{ c.id_pais }}">
+          <!-- <div class="card-body" *ngIf="arrCats.includes(c)"> -->
+          <div class="card-body">
+            <table class="table table-responsive table-hover d-block d-md-table">
+              <thead>
+                <th>{{ c.pais }}</th>
+                <th class="text-right">Precio</th>
+                <th class="text-right">Demora</th>
+                <th></th>
+              </thead>
+              <tbody *ngFor="let s of servicios | search:filtro_busqueda" >
+                <tr *ngIf="s.id_pais == c.id_pais && (s.id_estado_serv == 1 || s.id_estado_serv == 3)">
+                  
+                  <td class="td-servicio"><a class="table-link" [routerLink]="['/servicio/editar/',s.link]">{{ s.str_descripcion }}</a></td>
+                  <td class="td-precio text-right">{{ s.precio | currency:'ARS':'symbol':'1.0-0' }}</td>
+                  <td class="td-demora text-right">{{ s.str_demora }}</td>
+                  <td class="text-center"><a [routerLink]="['/servicio/editar/',s.link]"><i class="fas fa-info-circle"></i></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

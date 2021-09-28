@@ -1,0 +1,106 @@
+#mainNav{
+	background: #000000BA;
+}
+
+.container-index{
+	width: 99%;
+	max-width: 99%;
+}
+
+#mainNav .nav-title{
+	font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+	font-size: 1.8rem;
+	/*color: #fffFFF90 !important;*/
+}
+
+#mainNav .nav-link{
+	/*font-size: 2.5vh;*/
+	/*color: #fffFFFBA !important;*/
+	/*padding-right: 0.75rem;
+    padding-left: 0.75rem;*/
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+	#mainNav .nav-link{
+		padding-right: 0.75rem;
+	  padding-left: 0.75rem;
+	}
+
+
+}
+
+.masthead{
+	height: 100vh;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../../imagenes/bg-masthead.jpg");
+	background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+
+
+.masthead h1 {
+	letter-spacing: 0.0625em;
+  /*font-size: 60px;*/
+  /*font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;*/
+}
+
+#mainNav .navbar-toggler {
+    color: #fffFFF90;
+    border: 1px solid #fffFFF90;
+}
+
+/*BOOTSTRAP CUSTOM*/
+.modal-title{
+	font-weight: 900;
+	font-size: 18px;
+}
+
+/*CONTACTO*/
+
+	#row-contacto .form-control{
+		padding: 15px;
+	  height: auto;
+	}
+
+	.link-contacto{
+		color: blue;
+	}
+	.link-contacto:hover{
+		color: darkblue;
+	}
+
+	.background-contacto{
+		height: auto;
+		padding: 100px 0px;
+	}
+
+	@media only screen and (min-width: 768px){
+		.background-contacto{
+			height: 100vh;
+			padding: 15rem 0rem;
+
+		}
+	}
+
+
+/*SERVICIOS*/
+	.background-servicios,.background-estado-pedido{
+		min-height: 100vh;
+		height: auto;
+		padding: 70px 0px;
+
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("../../imagenes/bg-masthead.jpg");
+		background-position: center;
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size: cover;
+
+	}
+
+	@media only screen and (max-width: 767px) {
+
+	}
+
+
